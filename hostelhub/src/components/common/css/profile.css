@@ -1,98 +1,147 @@
+/* =====================
+   Profile Page Styling
+   ===================== */
 .profile-container {
-  max-width: 600px;
-  margin: 2rem auto;
-  background-color: var(--form-bg);
+  max-width: 700px;
+  margin: 3rem auto;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border: 1px solid var(--light-border);
-  color: var(--text-color);
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  font-family: 'Inter', sans-serif;
+  color: #111827;
+  transition: all 0.3s ease;
 }
 
+/* Title */
 .profile-container h2 {
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #111827;
   text-align: center;
-  color: var(--link-color);
+  border-bottom: 2px solid #f3f4f6;
+  padding-bottom: 0.8rem;
+}
+
+/* Profile Fields */
+.profile-field {
+  display: flex;
   margin-bottom: 1.5rem;
 }
 
-.profile-field {
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-}
-
 .profile-field strong {
-  display: inline-block;
   width: 100px;
-  color: var(--span-color);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #374151;
 }
 
-.profile-field span,
-.profile-field input {
+.profile-field span {
   font-size: 1rem;
-  color: var(--text-color);
+  color: #4b5563;
 }
 
+/* Input Fields */
 .profile-field input {
-  padding: 0.4rem;
-  border: 1px solid var(--input-border);
-  border-radius: 6px;
-  width: 100%;
-  margin-left: 0.5rem;
-  background-color: var(--form-bg);
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-field input:focus {
-  border-color: var(--input-focus);
-  outline: none;
+  border-color: #e63946; /* Brand accent */
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15);
 }
 
+/* Buttons Container */
 .profile-buttons {
   display: flex;
-  width: 100%;
-  gap: 10px;
-  margin-top: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
+/* Buttons Base */
 .profile-buttons button {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: 10px;
   border: none;
-  border-radius: 8px;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
+/* Primary Button (Save / Edit) */
 .profile-buttons button:first-child {
-  background-color: var(--btn-bg);
+  background: #e63946;
   color: #fff;
+  box-shadow: 0 4px 12px rgba(230, 57, 70, 0.2);
 }
 
 .profile-buttons button:first-child:hover {
-  background-color: var(--btn-hover);
+  background: #d62839;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(230, 57, 70, 0.3);
 }
 
+/* Secondary Button (Cancel) */
 .profile-buttons button:nth-child(2) {
-  background-color: #999;
-  color: #fff;
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+  color: #374151;
 }
 
-.profile-delete {
-  margin-top: 1.5rem;
-  text-align: center;
+.profile-buttons button:nth-child(2):hover {
+  background: #f3f4f6;
+  transform: translateY(-2px);
 }
 
-.profile-delete button {
-  background-color: transparent;
-  color: red;
-  border: 1px solid red;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+/* Delete Button */
+.profile-buttons button[style] {
+  border: 1px solid #e63946 !important;
+  color: #e63946 !important;
+  background: transparent !important;
 }
 
-.profile-delete button:hover {
-  background-color: rgba(255, 0, 0, 0.1);
+.profile-buttons button[style]:hover {
+  background: rgba(230, 57, 70, 0.08) !important;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 1.5rem;
+    margin: 2rem 1rem;
+  }
+
+  .profile-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .profile-buttons button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .profile-field strong {
+    font-size: 0.95rem;
+  }
+
+  .profile-field span,
+  .profile-field input {
+    font-size: 0.9rem;
+  }
 }

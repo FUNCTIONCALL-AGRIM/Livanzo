@@ -1,33 +1,40 @@
+/* ===== Manage Hostel Form (Home Theme) ===== */
 .manage-hostel-container {
-  max-width: 600px;
-  margin: 2rem auto;
-  background: var(--form-bg);
-  padding: 2rem;
-  border-radius: 1rem;
-  border: 1px solid var(--light-border);
-  transition: background 0.3s;
+  max-width: 700px;
+  margin: auto;
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.manage-hostel-container:hover {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 
 .manage-hostel-container h2 {
-  font-size: 1.5rem;
-  color: var(--primary);
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  color: #111827;
   text-align: center;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
+  margin-bottom: 2rem;
+  font-weight: 700;
 }
 
+/* Form Layout */
 .manage-hostel-container form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  gap: 20px;
 }
 
-/* Full-width rows for description and file input */
 .full-width {
   grid-column: 1 / -1;
 }
 
-/* === Floating Label Field === */
+/* === Floating Label Fields === */
 .form-group {
   position: relative;
   display: flex;
@@ -36,119 +43,187 @@
 
 .form-group input,
 .form-group textarea,
-.form-group input[type="file"],
-.form-group select {
-  padding: 10px 16px;
-  font-size: 16px;
-  border: 1px solid var(--input-border);
-  border-radius: 0.7rem;
-  background-color: var(--input-bg);
-  color: var(--text-color);
-  transition: border 0.3s ease;
-}
+.form-group select,
 .form-group input[type="file"] {
-  font-size: 11px;
-}
-.form-group select {
-  font-size: 15px;
-}
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: var(--input-focus);
-  outline: none;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  background: #f9fafb;
+  color: #111827;
+  transition: border 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Label floating animation */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #e63946;
+  outline: none;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15);
+}
+
+.form-group input[type="file"] {
+  font-size: 0.85rem;
+  padding: 10px;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* Floating Label */
+.form-group label {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  transform: translateY(-50%);
+  font-size: 0.95rem;
+  color: #6b7280;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background: transparent;
+}
+.form-group label[for="images"]{
+  top: -4px;
+  left: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #e63946;
+  background: #fff;
+  padding: 0 0.4rem;
+  border-radius: 4px;
+}
 .form-group input:focus + label,
 .form-group input:not(:placeholder-shown) + label,
 .form-group textarea:focus + label,
-.form-group textarea:not(:placeholder-shown) + label,
-.form-group label[for] {
-  top: -10px;
-  left: 10px;
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -4px;
+  left: 12px;
   font-size: 0.75rem;
-  color: var(--input-focus);
-  background: var(--form-bg);
-  padding: 0 0.3rem;
-}
-
-/* Floating Labels */
-.form-group label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  padding: 10px 16px;
-  background: transparent;
-  color: var(--placeholder-color);
-  pointer-events: none;
-  transition: all 0.2s ease;
-  font-size: 15px;
-}
-
-.form-group input[type="file"]:focus,
-.form-group select:focus {
-  border-color: var(--input-focus);
-  outline: none;
+  font-weight: 600;
+  color: #e63946;
+  background: #fff;
+  padding: 0 0.4rem;
+  border-radius: 4px;
 }
 
 /* Textarea */
 .form-group textarea {
   resize: vertical;
-  min-height: 40px;
+  min-height: 70px;
 }
 
 /* Submit Button */
 .manage-hostel-container button {
   grid-column: 1 / -1;
-  background-color: var(--btn-bg);
-  color: white;
-  padding: 0.5rem;
+  background: #e63946;
+  color: #fff;
+  padding: 0.9rem;
   border: none;
-  border-radius: 0.7rem;
-  font-size: 1.1rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s;
-  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-.manage-hostel-container button[type="submit"]:hover {
-  background-color: var(--btn-hover);
+.manage-hostel-container button:hover {
+  background: #d62839;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
-/* Required Field Star */
+/* Required Field */
 .required {
-  color: red;
+  color: #e63946;
   margin-left: 2px;
+  font-size: 0.9rem;
 }
+
+/* === Map Input & Controls === */
 .inputMap {
   position: relative;
+  height: 300px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f9fafb;
 }
+
 .getCurrLoc {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  padding: 6px;
+  top: 12px;
+  right: 12px;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  padding: 6px 8px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 18px;
   border-radius: 50%;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-  z-index: 10;
-  color: black;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background 0.2s ease;
+  color: #111827;
 }
-#autocomplete{
+
+.getCurrLoc:hover {
+  background: #f3f4f6;
+}
+
+#autocomplete {
   position: absolute;
-  top: 10px;
-  z-index: 10;
+  top: 12px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 10px 16px;
-  border: 1px solid var(--input-border);
-  border-radius: 4px;
-  width: 60%;
-  outline:none;
-  box-sizing: border-box;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  width: 65%;
+  background: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 768px) {
+  .manage-hostel-container {
+    padding: 1.5rem;
+  }
+
+  .manage-hostel-container form {
+    grid-template-columns: 1fr; /* Single column */
+    gap: 16px;
+  }
+
+  #autocomplete {
+    width: 85%;
+    font-size: 0.9rem;
+    padding: 10px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .manage-hostel-container {
+    padding: 1.2rem;
+    border-radius: 12px;
+  }
+
+  .manage-hostel-container h2 {
+    font-size: 1.4rem;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+
+  .manage-hostel-container button {
+    font-size: 0.95rem;
+    padding: 0.75rem;
+  }
+
+  #autocomplete {
+    width: 90%;
+  }
 }

@@ -72,7 +72,7 @@ const RightNav = ({ searchTerm, setSearchTerm }) => {
         </motion.div>}
       </AnimatePresence>
       {!showSearch && <FontAwesomeIcon onClick={() => setShowSearch(true)} className='search-button' icon={faMagnifyingGlass} />}
-        <ToggleButton />
+        {/* <ToggleButton /> */}
         <button onClick={() => navigate("/login")}>Login</button>
                 <AnimatePresence>
 
@@ -121,7 +121,7 @@ const RightNav = ({ searchTerm, setSearchTerm }) => {
         </motion.div>}
       </AnimatePresence>
       {!showSearch && <FontAwesomeIcon onClick={() => setShowSearch(true)} className='search-button' icon={faMagnifyingGlass} />}
-      <ToggleButton />
+      {/* <ToggleButton /> */}
       <FontAwesomeIcon
         icon={faBars}
         className='menu-button'

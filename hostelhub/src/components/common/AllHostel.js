@@ -331,10 +331,10 @@ const AllHostels = ({ hostels }) => {
                 />
 
                 <div className="modal-buttons">
-                  <button onClick={() => setShowModal(false)}>Close</button>
                   <button onClick={() => setShowModal(false)}>
                     Apply Filters
                   </button>
+                  <button onClick={() => setShowModal(false)}>Close</button>
                   <button className="clear-btn" onClick={handleClearFilters}>
                     Clear Filters
                   </button>

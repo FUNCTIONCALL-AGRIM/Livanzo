@@ -19,8 +19,8 @@ const ManageHostel = () => {
     name: '',
     rent: '',
     description: '',
-    roomType: 'Single',
-    allowedFor: 'Both',
+    roomType: '',
+    allowedFor: '',
     images: [], // will hold FileList
     landmark: '',
     address: '',
@@ -274,25 +274,42 @@ const handleUseCurrentLocation = () => {
           <label>Facilities (comma separated)</label>
         </div>
 
-        <div className="form-group">
-          <label htmlFor="roomType">Room Type</label>
-          <select name="roomType" id="roomType" value={form.roomType} onChange={handleChange} required>
-            <option>Single</option>
-            <option>Double</option>
-            <option>Triple</option>
-            <option>Dormitory</option>
-          </select>
-        </div>
+<div className="form-group">
+  <select
+    name="roomType"
+    id="roomType"
+    value={form.roomType}
+    onChange={handleChange}
+    required
+  >
+    <option value="">
+      -- Select Room Type --
+    </option>
+    <option value="Single">Single</option>
+    <option value="Double">Double</option>
+    <option value="Triple">Triple</option>
+    <option value="Dormitory">Dormitory</option>
+  </select>
+</div>
 
-        <div className="form-group">
-          <label htmlFor="allowedFor">Allowed For</label>
-          <select name="allowedFor" id="allowedFor" value={form.allowedFor} onChange={handleChange} required>
-            <option>Boys</option>
-            <option>Girls</option>
-            <option>Both</option>
-            <option>Family</option>
-          </select>
-        </div>
+<div className="form-group">
+  <select
+    name="allowedFor"
+    id="allowedFor"
+    value={form.allowedFor}
+    onChange={handleChange}
+    required
+  >
+    <option value="">
+      -- Select Allowed For --
+    </option>
+    <option value="Boys">Boys</option>
+    <option value="Girls">Girls</option>
+    <option value="Both">Both</option>
+    <option value="Family">Family</option>
+  </select>
+</div>
+
 
         <button type="submit">Add Hostel</button>
       </form>

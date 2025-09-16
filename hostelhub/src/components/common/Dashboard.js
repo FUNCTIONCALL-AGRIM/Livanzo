@@ -3,6 +3,7 @@ import React from 'react';
 import { Outlet} from 'react-router-dom';
 import './css/dashboard.css';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 const Dashboard = ({ searchTerm, setSearchTerm }) => {
   const role = localStorage.getItem('role');
@@ -13,7 +14,7 @@ const Dashboard = ({ searchTerm, setSearchTerm }) => {
       <div className="userContent">
         <Outlet />
       </div>
-      
+      <Footer role={role}/>
     </div>
   );
 };

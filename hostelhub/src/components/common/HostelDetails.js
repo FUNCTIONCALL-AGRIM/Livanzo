@@ -9,7 +9,7 @@ const HostelDetails = () => {
   const [editHostel, setEditHostel] = useState(null);
   const [showAddModal, setShowAddModal] = useState(false)
   const [form, setForm] = useState({
-    name: '', rent: '', description: '', roomType: 'Single', allowedFor: 'Both',
+    name: '', rent: '', description: '', roomType: '', allowedFor: '',
     address: { street: '', city: '', state: '', pincode: '', landmark: '' },
     nearbyColleges: [], facilities: [], images: [],
   });
@@ -321,9 +321,7 @@ const HostelDetails = () => {
   <span className="label">Nearby Colleges:</span>
   <div className="college-tags">
     {hostel.nearbyColleges.map((college, i) => (
-      <>
       <span key={i} className="college-tag">{college}</span>
-      </>
     ))}
   </div>
 </div>
@@ -355,7 +353,7 @@ const HostelDetails = () => {
       }
     }} className="modal-overlay">
           <div onClick={(e)=>e.stopPropagation()} className="modal-content ">
-            <h3>Edit Hostel</h3>
+            <h2>Edit Hostel</h2>
             <form onSubmit={handleSubmit}>
         <div className="form-group">
           <input name="name" placeholder=" " value={form.name} onChange={handleChange} required />
@@ -413,24 +411,40 @@ const HostelDetails = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="roomType">Room Type</label>
-          <select name="roomType" id="roomType" value={form.roomType} onChange={handleChange} required>
-            <option>Single</option>
-            <option>Double</option>
-            <option>Triple</option>
-            <option>Dormitory</option>
-          </select>
-        </div>
+  <select
+    name="roomType"
+    id="roomType"
+    value={form.roomType}
+    onChange={handleChange}
+    required
+  >
+    <option value="">
+      -- Select Room Type --
+    </option>
+    <option value="Single">Single</option>
+    <option value="Double">Double</option>
+    <option value="Triple">Triple</option>
+    <option value="Dormitory">Dormitory</option>
+  </select>
+</div>
 
-        <div className="form-group">
-          <label htmlFor="allowedFor">Allowed For</label>
-          <select name="allowedFor" id="allowedFor" value={form.allowedFor} onChange={handleChange} required>
-            <option>Boys</option>
-            <option>Girls</option>
-            <option>Both</option>
-            <option>Family</option>
-          </select>
-        </div>
+<div className="form-group">
+  <select
+    name="allowedFor"
+    id="allowedFor"
+    value={form.allowedFor}
+    onChange={handleChange}
+    required
+  >
+    <option value="">
+      -- Select Allowed For --
+    </option>
+    <option value="Boys">Boys</option>
+    <option value="Girls">Girls</option>
+    <option value="Both">Both</option>
+    <option value="Family">Family</option>
+  </select>
+</div>
         <div class="modal-buttons">
 
         <button type="submit">Save Changes</button>

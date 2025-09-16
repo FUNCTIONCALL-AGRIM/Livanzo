@@ -37,11 +37,11 @@ const MyHostel = () => {
         <div className="hostel-grid">
           {myHostels.map((h) => (
             <div key={h._id} className="hostel-card">
-              <img onClick={() => handleClick(h._id)} src={h.images[0].startsWith('http')?h.images[0]:`${process.env.REACT_APP_BACKEND_URL}${h.images[0]}`} alt="No img" />
+              <img className='hostel-image' onClick={() => handleClick(h._id)} src={h.images[0].startsWith('http')?h.images[0]:`${process.env.REACT_APP_BACKEND_URL}${h.images[0]}`} alt="No img" />
               <h3>{h.name}</h3>
               <p>{h.description}</p>
               <p>Rent: ₹{h.rent}</p>
-              <p>City: {h.address?.city}</p>
+              <p>Address: {h.address}</p>
             </div>
           ))}
         </div>

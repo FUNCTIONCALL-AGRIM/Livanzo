@@ -147,9 +147,9 @@ function App() {
           <Route index element = {<Home hostels={hostels}/>}/>
 
           <Route path = "allhostels" element={<AllHostel hostels={filteredHostels} />} />
-          <Route path="login" element={<Login />} />
-          <Route path="signup" element={<Signup />} />
         </Route>
+        <Route path="login" element={<Login />} />
+        <Route path="signup" element={<Signup />} />
 
         {/* Catch all fallback */}
         <Route path="*" element={<Navigate to="/" />} />

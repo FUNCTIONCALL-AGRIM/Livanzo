@@ -1,5 +1,5 @@
-:root {
-  --hero-bg: linear-gradient(to right, #ceeef2, #ffffff); /* Slightly softer */
+ :root {
+  --hero-bg: linear-gradient(to right, #ceeef2, #ffffff); 
   --bg-color: #e9f8ff;
   --bg-gradient-start: #ffffff;
   --bg-gradient-end: #f0f4f8;
@@ -15,8 +15,8 @@
   --nav-link-color: #333;
   --nav-link-hover: #007bff;
 
-  --primary: #1a237e;           /* deep indigo */
-  --secondary: #00bcd4;         /* cyan */
+  --primary: #1a237e;      
+  --secondary: #00bcd4;  
 
   --btn-bg: #007bff;
   --btn-hover: #0056b3;
@@ -53,7 +53,7 @@
   --quote-color: #555;
   --quote-cite-color: #999;
 }
-
+/*
 
 .dark {
   --hero-bg:#08101a;
@@ -109,11 +109,12 @@
   --overlay-dark: rgba(0, 0, 0, 0.6);
   --quote-color: #bbb;
   --quote-cite-color: #999;
-}
+} */
 /* Use CSS variables in the rest of the stylesheet to support dark mode and customization */
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {

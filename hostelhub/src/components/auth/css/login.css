@@ -1,220 +1,342 @@
-/* login.css */
-
-/* === Root Variables for Light & Dark Mode === */
-
-/* === Main Containers === */
-
-#login,
-#signup {
+/* ===== LOGIN PAGE ===== */
+#login {
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 72px);
-  background: linear-gradient(to right, var(--bg-gradient-start), var(--bg-gradient-end));
+  padding: 2rem;
+  background: #f9fafb; /* same as home theme */
 }
 
-#login h2,#signup h2 {
-  font-size: 1.75rem;
-  margin: 1rem 0;
-  text-align: center;
-  color: var(--text-color);
-}
-.avatar{
-  font-size: 100px;
-  margin: 15px auto;
-  display: block;
-  color: var(--primary);
-}
+/* ===== LOGIN FORM ===== */
 .loginForm {
-  position: relative;
-  margin: 30px 0;
-  background-color: var(--form-bg);
-  border: 1px solid var(--link-active);
-  padding: 2rem 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: 70%;
-  max-width: 400px;
-  box-sizing: border-box;
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
 
+.loginForm h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
 }
-.loginForm *{
-  position: relative;
-  z-index: 4;
+
+.loginForm .avatar {
+  font-size: 4rem;
+  color: #e63946;
+  margin: 1rem 0;
 }
-.loginForm::before{
-  content: "";
-  height: calc(100% - 40px);
-  width: calc(100% - 40px);
-  background-color: var(--form-bg);
-  display: block;
-  position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-      box-shadow: inset 4px 4px 8px #0e0e0e;
-    border-radius: 8px;
-}
+
+/* ===== INPUTS ===== */
 .loginForm input {
   width: 100%;
-  padding: 0.8rem;
+  padding: 0.75rem 1rem;
   margin-bottom: 1rem;
-  border: 1px solid var(--input-border);
   border-radius: 8px;
+  border: 1px solid #d1d5db;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
-  background-color: transparent;
-  color: var(--text-color);
-  box-sizing: border-box;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
 }
 
 .loginForm input:focus {
-  border-color: var(--input-focus);
-  outline: none;
+  border-color: #e63946;
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.2);
 }
 
+/* ===== PASSWORD BOX ===== */
+.pass_box, 
+.forgot_pass_box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.pass_box input,
+.forgot_pass_box input {
+  width: 100%;
+  padding-right: 2.5rem;
+}
+
+.eye {
+  position: absolute;
+      top: 0;
+    right: 0;
+    padding: 13px;
+  cursor: pointer;
+  color: #6b7280;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+.eye:hover {
+  color: #111827;
+}
+
+/* ===== LINKS ===== */
+.loginForm a {
+  display: inline-block;
+  margin: 0.5rem 0 1rem;
+  font-size: 0.9rem;
+  color: #e63946;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.loginForm a:hover {
+  text-decoration: underline;
+  color: #d62839;
+}
+
+/* ===== BUTTONS ===== */
 .loginForm button {
   width: 100%;
-  padding: 0.9rem;
-  background-color: var(--btn-bg);
-  color: #fff;
+  padding: 0.8rem;
+  border-radius: 8px;
   border: none;
   font-size: 1rem;
   font-weight: 600;
-  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-.loginForm select {
-      width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-    font-size: 1rem;
-    appearance: none;
-  background-color: transparent;
-  color: var(--text-color);
-    border: 1px solid var(--input-border);
-}
-
-.loginForm select:focus {
-  border-color: var(--input-focus);
-  outline: none;
-}
-.loginForm option {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-#root ::placeholder,
-#root select {
-  color: var(--placeholder-color) !important;
-  opacity: 1; /* Ensures visibility across all browsers */
+  background: #e63946;
+  color: #fff;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .loginForm button:hover {
-  background-color: var(--btn-hover);
+  background: #d62839;
+  transform: translateY(-2px);
 }
 
 .loginForm span {
   display: block;
   margin-top: 1rem;
   font-size: 0.95rem;
-  color: var(--span-color);
-  text-align: center;
+  color: #374151;
 }
 
-.loginForm a {
-  display: inline-block;
-  cursor: pointer;
-  margin: 0 4px;
-  height: 25px;
-  color: var(--link-color);
-  text-decoration: none;
-  font-weight: 500;
+.loginForm span a {
+  font-weight: 600;
 }
 
-.loginForm a:hover {
-  text-decoration: underline;
-}
-
-/* === Password Box === */
-.pass_box {
-  position: relative;
-  width: 100%;
-}
-
-.pass_box .eye {
-  color: var(--span-color);
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 14px;
-}
-
-/* === Forgot Password Eye Box === */
-.forgot_pass_box {
-  position: relative;
-  width: 100%;
-}
-
-.forgot_pass_box .eye {
-  color: var(--span-color);
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 19px;
-}
-
-/* === Modal === */
+/* ===== MODAL ===== */
 #login .modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  inset: 0;
+  background: rgba(0,0,0,0.55);
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 1000;
+  align-items: center;
+  z-index: 50;
+  backdrop-filter: blur(3px);
 }
 
 #login .modal-content {
-  background-color: var(--modal-bg);
-  padding: 20px 30px;
-  border-radius: 10px;
-  width: 90%;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 14px;
+  width: 95%;
   max-width: 400px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
   text-align: center;
-  color: var(--text-color);
+}
+
+#login .modal-content h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #111827;
 }
 
 #login .modal-content input {
-  margin: 10px 0;
-  padding: 8px;
-  width: 91%;
-  background-color: transparent;
-  color: var(--text-color);
-  border: 1px solid var(--input-border);
+  width: 100%;
+  padding: 0.7rem 1rem;
+  margin: 0.5rem 0 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
 }
 
 #login .modal-content button {
-  margin: 10px;
-  padding: 8px 16px;
-  background-color: var(--btn-bg);
-  color: #fff;
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.5rem;
+  border-radius: 8px;
   border: none;
-  border-radius: 6px;
-}
-
-#login .close-btn {
-  background-color: var(--close-btn-bg);
-  border: none;
+  font-weight: 600;
   cursor: pointer;
-  color: var(--text-color);
+  background: #e63946;
+  color: #fff;
+  transition: background 0.3s, transform 0.2s;
 }
 
+#login .modal-content button:hover {
+  background: #d62839;
+  transform: translateY(-2px);
+}
 
+/* Close Button */
+#login .close-btn {
+  background: #e5e7eb !important;
+  color: #111827 !important;
+  margin-top: 1rem;
+}
 
+#login .close-btn:hover {
+  background: #d1d5db !important;
+}
 
+/* ===== RESPONSIVENESS ===== */
+@media (max-width: 480px) {
+  .loginForm {
+    padding: 2rem 1.5rem;
+  }
+
+  .loginForm h2 {
+    font-size: 1.5rem;
+  }
+
+  .loginForm .avatar {
+    font-size: 3rem;
+  }
+
+  #login .modal-content {
+    padding: 1.5rem;
+  }
+
+  #login .modal-content h3 {
+    font-size: 1.2rem;
+  }
+}
+/* ===== SIGNUP PAGE ===== */
+#signup {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: #f9fafb; /* same theme as login */
+}
+
+/* Reuse .loginForm styles for signup as well */
+#signup .loginForm {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+#signup .loginForm h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+#signup .loginForm .avatar {
+  font-size: 4rem;
+  color: #e63946;
+  margin: 1rem 0;
+}
+
+/* Inputs & Select */
+#signup .loginForm input,
+#signup .loginForm select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+#signup .loginForm input:focus,
+#signup .loginForm select:focus {
+  border-color: #e63946;
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.2);
+}
+
+/* Password Box */
+#signup .pass_box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#signup .pass_box input {
+  padding-right: 2.5rem;
+}
+
+#signup .eye {
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+  color: #6b7280;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+#signup .eye:hover {
+  color: #111827;
+}
+
+/* Buttons */
+#signup .loginForm button {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #e63946;
+  color: #fff;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#signup .loginForm button:hover {
+  background: #d62839;
+  transform: translateY(-2px);
+}
+
+/* Links */
+#signup .loginForm span {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+#signup .loginForm span a {
+  font-weight: 600;
+  color: #e63946;
+  text-decoration: none;
+}
+
+#signup .loginForm span a:hover {
+  text-decoration: underline;
+  color: #d62839;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  #signup .loginForm {
+    padding: 2rem 1.5rem;
+  }
+  #signup .loginForm h2 {
+    font-size: 1.5rem;
+  }
+  #signup .loginForm .avatar {
+    font-size: 3rem;
+  }
+}
 

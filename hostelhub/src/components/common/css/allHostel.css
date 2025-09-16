@@ -1,264 +1,237 @@
+/* ===== CONTAINER ===== */
 .all-hostels-container {
-  padding: 1rem 2rem;
-}
-
-.all-hostels-container h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: var(--text-color);
-}
-
-.hostel-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-  gap: 1rem;
-}
-
-.hostel-card {
-  border: 1px solid var(--input-border);
-  border-radius: 12px;
-  padding: 12px;
-  background-color: var(--form-bg);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-}
-
-.hostel-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px var(--card-hover-shadow);
-}
-
-.hostel-card img {
-  width: 100%;
-  height: 140px;
-  border-radius: 8px 8px 0 0;
-  object-fit: cover;
-  border-bottom: 1px solid var(--input-border);
-}
-
-.hostel-card h3 {
-  margin: 0;
-  color: var(--link-color);
-  font-size: 16px;
-}
-
-.hostel-card p {
-  margin: 0.2rem 0;
-  color: var(--span-color);
-  font-size: 13px;
-    display: -webkit-box;
-  line-clamp: 1;
-  -webkit-line-clamp: 1; /* Change to 2, 3, etc. for more lines */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.hostel-card button {
-  margin-top: 0.8rem;
-  margin-right: 0.5rem;
-  padding: 0.4rem 1rem;
-  border: none;
-  border-radius: 6px;
-  background-color: var(--btn-bg);
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.hostel-card button:hover {
-  background-color: var(--btn-hover);
-}
-
-/* Edit Hostel Form */
-.editHostel{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-.edit-hostel-form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: fixed;
-  top: 0;
-  width: 87%;
-  margin-top: 2rem;
   padding: 2rem;
-  background-color: var(--form-bg);
-  border: 2px solid var(--input-border);
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
-  height: 80vh;
+  max-width: 1400px;
+  margin: 0 auto;
 }
-
-.edit-hostel-form-container h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  color: var(--text-color);
+.all-hostels-container h2{
+  font-size: clamp(1.6rem, 3vw, 2rem);
+    color: #111827;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
 }
-
-.edit-hostel-form-container form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-height: 100%;
-  width: 80vw;
-}
-
-.edit-hostel-form-container input,
-.edit-hostel-form-container select,
-.edit-hostel-form-container textarea {
-  padding: 0.8rem;
-  font-size: 1rem;
-  border: 1px solid var(--input-border);
-  border-radius: 5px;
-  background-color: var(--form-bg);
-  color: var(--text-color);
-}
-
-.edit-hostel-form-container input:focus,
-.edit-hostel-form-container textarea:focus,
-.edit-hostel-form-container select:focus {
-  outline: none;
-  border-color: var(--input-focus);
-}
-
-.edit-hostel-form-container textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-.edit-hostel-form-container button {
-  padding: 0.7rem 1.5rem;
-  font-size: 1rem;
-  background-color: #28a745;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.edit-hostel-form-container button:hover {
-  background-color: #218838;
-}
-
-.edit-hostel-form-container .close-button {
-  background-color: var(--close-btn-bg);
-}
-
-.edit-hostel-form-container .close-button:hover {
-  background-color: #c82333;
-}
-
-/* Scrollbar */
-.edit-hostel-form-container::-webkit-scrollbar {
-  width: 8px;
-}
-.edit-hostel-form-container::-webkit-scrollbar-thumb {
-  background-color: var(--input-focus);
-  border-radius: 4px;
-}
-.edit-hostel-form-container::-webkit-scrollbar-track {
-  background-color: var(--bg-color);
-}
-
-/* Filter Section */
+/* ===== FILTER SECTION ===== */
 .filter-section {
   display: flex;
+  align-items: center;
   gap: 1rem;
-  margin-bottom: 1rem;
-  width: 100%;
+  margin-bottom: 2rem;
 }
 
+.filter-button {
+  background:  #e63946;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
 
+.filter-button:hover {
+  background: #d62839;
+}
 
 .filter-section select {
-  width: 100px;
-  padding:  6px 12px;
-  border-radius: 25px;
-  margin: 0;
-  box-sizing: border-box;
-  background-color: var(--form-bg);
-  color: var(--text-color);
-  border: 1px solid var(--input-border);
-}
-.filter-section .modal-content input,
-.filter-section .modal-content select{
-    padding: 0.8rem;
-    font-size: 1rem;
-    border: 1px solid var(--input-border);
-    border-radius: 8px;
-    background-color: var(--highlight-bg);
-    color: var(--text-color);
-    width: 100%;
-    box-sizing: border-box;
-}
-.filter-section .filter-button {
-  padding: 10px 20px;
-background-color: var(--form-bg);
-    color: var(--placeholder-color);
-    border: 1px solid var(--input-border);
-    border-radius: 25px;
+  padding: 0.55rem 1rem;
+  border: 1px solid #e63946;
+  border-radius: 6px;
+  font-size: 0.9rem;
   cursor: pointer;
-  font-weight: 500;
 }
 
-.filter-section .modal-overlay {
+/* ===========================
+   FILTER MODAL STYLES
+   =========================== */
+.all-hostels-container .modal-overlay,.hostel-details-container .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: rgba(17, 24, 39, 0.65); /* semi-dark overlay */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 999;
+  padding: 1rem;
 }
 
-.filter-section .modal-content {
-  padding: 30px;
-  border-radius: 8px;
-  width: 70%;
-  max-height: 70vh;
+.all-hostels-container .modal-content,.hostel-details-container .modal-content {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
   overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  animation: scaleIn 0.25s ease;
 }
-
-.filter-section .modal-buttons {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-top: 20px;
+.all-hostels-container .modal-content::-webkit-scrollbar,.hostel-details-container .modal-content::-webkit-scrollbar{
+  display: none;
 }
-
-.filter-section .modal-buttons button {
-  background-color: var(--btn-bg);
-  color: white;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-weight: 500;
-  cursor: pointer;
-  border: none;
-  transition: background-color 0.2s ease;
-}
-
-
-@media screen and (max-width:768px) {
-  .all-hostels-container{
-    padding: 0.7rem 1.5rem;
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
-@media screen and (max-width: 400px) {
+
+.all-hostels-container .modal-content h2,.hostel-details-container .modal-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+/* Inputs and Selects */
+.all-hostels-container .modal-content input,
+.all-hostels-container .modal-content select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.all-hostels-container .modal-content input:focus,
+.all-hostels-container .modal-content select:focus {
+  border-color: #e63946;
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.2);
+}
+
+/* Buttons */
+.all-hostels-container .modal-buttons,.hostel-details-container .modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.all-hostels-container .modal-buttons button,.hostel-details-container .modal-buttons button {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.2s;
+}
+
+
+.all-hostels-container .modal-buttons button:nth-child(1),.hostel-details-container .modal-buttons button:nth-child(1) {
+  background: #e63946;
+  color: #fff;
+}
+
+.all-hostels-container .modal-buttons button:nth-child(1):hover,.hostel-details-container .modal-buttons button:nth-child(1):hover {
+  background: #d62839;
+  color: #fff;
+  transform: translateY(-2px);
+}
+.all-hostels-container .modal-buttons button:nth-child(2),.hostel-details-container .modal-buttons button:nth-child(2) {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.all-hostels-container .modal-buttons button:nth-child(2):hover,.hostel-details-container .modal-buttons button:nth-child(2):hover {
+  background: #e5e7eb;
+}
+
+.all-hostels-container .modal-buttons .clear-btn {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.all-hostels-container .modal-buttons .clear-btn:hover {
+  background: #fee2e2;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+  .all-hostels-container .modal-content {
+    padding: 1.5rem;
+  }
+
+  .all-hostels-container .modal-content h2 {
+    font-size: 1.25rem;
+  }
+}
+
+
+/* ===== HOSTEL GRID ===== */
+.hostel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.hostel-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hostel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.hostel-image {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.hostel-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+  color: #222;
+}
+
+.hostel-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.3rem 0;
+}
+
+/* ===== RESPONSIVENESS ===== */
+@media (max-width: 768px) {
   .all-hostels-container{
-    padding: 0.7rem 1rem;
+    padding: 0rem 2rem;
+    padding-bottom: 2rem;
+  }
+  .filter-section {
+    align-items: stretch;
+  }
+
+  .filter-section select,
+  .filter-button {
+    width: auto;
+  }
+
+  .hostel-grid {
+    grid-template-columns: 1fr;
   }
 }
