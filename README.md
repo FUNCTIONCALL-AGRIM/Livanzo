@@ -9,31 +9,31 @@
 ### 👥 Role-Based Access
 
 * 👤 **Guests** – Browse all hostels, search, login/signup
-* 🧑‍🎓 **Users** – Search and view hostels, add reviews, mark favorites, access profile
-* 🏢 **Owners** – Upload and manage hostels, view listings, edit profile
+* 🧑‍🎓 **Users** – Search/view hostels, add reviews, mark favorites, access profile
+* 🏢 **Owners** – Upload/manage hostels, view listings, edit profile
 
 ### 🔍 Search & Filter
 
-* Search hostels by name
-* Filter by budget
-* Filter by room type
-* Filter by allowed category
-* Filter by nearby colleges
+* Search hostels by **name**
+* Filter by **budget**
+* Filter by **room type**
+* Filter by **allowed for**
+* Filter by **nearby colleges**
 
 ### 🧾 Owner Panel
 
 * View all hostels or only **My Hostels**
-* Add and edit hostel listings
-* Upload multiple hostel images
+* Add/Edit hostel listings with multiple images
 * Update owner details
 
 ### 💬 User Panel
 
-* View detailed hostel information
-* Image carousel with preview modal
-* Add or remove favorites
-* View owner information
-* Add and edit reviews
+* View hostel details with:
+
+  * Image carousel + full preview modal
+  * Favorite toggle
+  * Owner info card
+  * Add/Edit review (if not already reviewed)
 
 ---
 
@@ -45,20 +45,20 @@
 * Tailwind CSS
 * React Router
 * AOS
-* Font Awesome
+* FontAwesome
 
 ### Backend
 
 * Node.js
 * Express.js
 * MongoDB (Mongoose)
-* JWT Authentication
+* JWT
 * Multer
 
-### Deployment
+### Hosting
 
-* Frontend: Vercel
-* Backend: Railway
+* Frontend – Vercel
+* Backend – Railway
 
 ---
 
@@ -110,8 +110,17 @@ npm start
 
 ---
 
-## 👨‍💻 Author
+## 👥 Contributors
 
-**Agrim Mishra**
+* Agrim Mishra
+* Shivansh Singh Rathore
 
-GitHub: https://github.com/FUNCTIONCALL-AGRIM
+Livanzo was developed as a collaborative project by the contributors listed above.
+
+---
+
+## 📜 Attribution
+
+This repository is maintained by **Agrim Mishra** for educational, development, and portfolio purposes.
+
+Credit for the original development of Livanzo belongs to all project contributors.
